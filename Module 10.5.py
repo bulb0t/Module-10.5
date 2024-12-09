@@ -24,7 +24,7 @@ names_files = [name for name in os.listdir() if os.path.isfile(name) and name.en
 
 if __name__ == '__main__':
     start_time = time()
-    with multiprocessing.Pool(len(names_files)) as p:
+    with multiprocessing.Pool(4) as p:
         p.map(read_info, names_files)
     end_time = time()
 
